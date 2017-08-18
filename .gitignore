@@ -100,5 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 
-# classifiers
+# other stuff
 /data/haarcascade_frontalface_alt.xml
+/screenshots/*
+!/screenshots/test.png

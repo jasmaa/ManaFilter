@@ -44,7 +44,7 @@ def find_face(img, classifier):
     return base
 
 
-haar = cv2.CascadeClassifier('data/haarcascade_frontalface_alt.xml')
+#haar = cv2.CascadeClassifier('data/haarcascade_frontalface_alt.xml')
 lbp_face_cascade = cv2.CascadeClassifier('data/lbpcascade_frontalface.xml')
 
 hat = Image.open('data/croissant_hair.png')
