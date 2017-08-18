@@ -11,7 +11,9 @@ Run: `python cv_video.py`
 ## Usage
 
 Works best in a well-let room.
+
 q to quit
+
 s to save picture to screenshots directory
 
 ## Credits
