@@ -1,6 +1,6 @@
 # ManaFilter
 
-Post-processes croissant hair onto video capture.
+Uses OpenCV wrapper for Python and Pillow to put croissant hair onto video captured images.
 
 ## Install
 
