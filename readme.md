@@ -2,13 +2,17 @@
 
 Post-processes croissant hair onto video capture.
 
-## Usage
+## Install
 
-Install: `pip install -r requirements.txt`
+Install dependencies: `pip install -r requirements.txt`
 
 Run: `python cv_video.py`
 
-Works best 2 meters from camera in a well-let room.
+## Usage
+
+Works best in a well-let room.
+q to quit
+s to save picture to screenshots directory
 
 ## Credits
 

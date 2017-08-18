@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from PIL import Image
+import datetime
 
 def convertToRGB(img):
     return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -17,7 +18,7 @@ def find_face(img, classifier):
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # Find face
-    faces = classifier.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=5);
+    faces = classifier.detectMultiScale(gray_img, scaleFactor=1.2, minNeighbors=5);
 
     # Rectangle around faces
     base = cv2pil(img)
@@ -43,26 +44,27 @@ def find_face(img, classifier):
     return base
 
 
+haar = cv2.CascadeClassifier('data/haarcascade_frontalface_alt.xml')
 lbp_face_cascade = cv2.CascadeClassifier('data/lbpcascade_frontalface.xml')
 
 hat = Image.open('data/croissant_hair.png')
 
 
 cap = cv2.VideoCapture(0)
-while(True):
+while(cap.isOpened()):
     ret, frame = cap.read()
 
     img = find_face(frame, lbp_face_cascade)
 
     cv2.imshow('frame', pil2cv(img))
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    c = cv2.waitKey(1)
+    if c == ord('q'):
         break
+    elif c == ord('s'):
+        i = datetime.datetime.now()
+        dt = "screenshot-%02d-%02d-%02d" % (i.hour, i.month, i.second)
+        img.save('screenshots/'+dt+'.png')
+        print("Saved: " + dt)
 
 cap.release()
 cv2.destroyAllWindows()
-
-
-"""
-cv_img = cv2.imread("data/people.jpg")
-cv2.imshow("img", pil2cv(find_face(cv_img, haar_face_cascade)))
-"""

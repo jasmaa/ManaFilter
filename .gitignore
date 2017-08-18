@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# classifiers
+/data/haarcascade_frontalface_alt.xml
