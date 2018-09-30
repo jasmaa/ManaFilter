@@ -4,17 +4,15 @@ Uses OpenCV wrapper for Python and Pillow to put croissant hair onto video captu
 
 ## Install
 
-Install dependencies: `pip install -r requirements.txt`
-
-Run: `python cv_video.py`
+  - Install dependencies: `pip install -r requirements.txt`
+  - Run: `python cv_video.py`
 
 ## Usage
 
-Works best in a well-let room.
+Works best in a well-lit room.
 
-q to quit
-
-s to save picture to screenshots directory
+  - q to quit
+  - s to save picture to screenshots directory
 
 ## Credits
 
